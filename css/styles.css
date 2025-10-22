@@ -1,0 +1,316 @@
+/* === Pocket Classroom – Deep Purple Theme === */
+:root {
+  --accent: #a855f7; /* vivid purple accent */
+  --bg: #0a0215; /* deep dark violet */
+  --card-bg: #140a25; /* softer purple-black background */
+  --muted: #c4b5fd; /* light lavender text */
+}
+
+body {
+  background: linear-gradient(180deg, #0a0215 0%, #140a25 100%);
+  color: #f3e8ff;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  padding-bottom: 40px;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+/* Card design */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #ffffff;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+}
+
+/* Headings inside cards */
+.card h3, .card h4, .card h5 {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+}
+
+.badge-level {
+text-transform: uppercase;
+  font-size: 0.65rem;
+  background-color: rgba(255, 255, 255, 0.12); /* darker background */
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 6px;
+  padding: 3px 8px;
+  color: #f9f7ff; /* bright white-lavender text */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.4);
+}
+
+.small-muted {
+  color: var(--muted);
+}
+
+/* Inputs, textareas, selects */
+textarea, input, select {
+  background: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 6px rgba(168, 85, 247, 0.2);
+}
+
+/* Flashcards */
+.flashcard {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffffff;
+}
+.flashcard-inner {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+.flashcard-face {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  padding: 28px;
+  border-radius: 12px;
+  min-height: 140px;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+}
+.flashcard-front {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(255, 255, 255, 0.03));
+}
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(0, 0, 0, 0.2));
+}
+
+/* Buttons */
+.controls-row .btn {
+  min-width: 90px;
+}
+.btn {
+  background-color: var(--accent);
+  border: none;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #c084fc;
+  box-shadow: 0 0 18px rgba(192, 132, 252, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Empty state */
+.empty-state {
+  opacity: .8;
+  padding: 28px;
+  border-radius: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  text-align: center;
+  color: #f3e8ff;
+}
+
+/* File input */
+input[type=file] { display: none; }
+
+kbd {
+  background: #1e1031;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: .8rem;
+  color: #ffffff;
+}
+
+/* === Library Card Progress Styling === */
+.card .small.text-info {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 6px;
+  margin-top: 4px;
+}
+
+.progress-bar {
+  transition: width 0.5s ease;
+}
+
+.progress-bar.bg-success {
+  background: linear-gradient(90deg, #a855f7, #c084fc);
+  box-shadow: 0 0 6px rgba(192, 132, 252, 0.6);
+}
+
+.card .small.text-muted {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  color: #e9d5ff;
+}
+
+/* === Force white text everywhere === */
+#library-section,
+#author-section,
+#learn-section,
+#quiz-area,
+#quiz-area *,
+#notes-list li,
+.form-select,
+option,
+ol li,
+ul li {
+  color: #ffffff !important;
+}
+
+/* Dropdowns */
+#caps-select, #caps-select option {
+  background-color: var(--card-bg);
+  color: #e6eef6 !important;
+}
+
+/* Quiz area */
+#quiz-area .list-group-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.3);
+}
+#quiz-feedback {
+  color: #cdb8ff !important;
+}
+
+/* Flashcard text faces */
+.flashcard-front, .flashcard-back {
+  color: #ffffff !important;
+}
+
+/* Flashcard navigation icons */
+.flash-nav-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-icon {
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #f3e8ff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.nav-icon:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  transform: scale(1.2);
+}
+
+/* Text styles */
+.small,
+.text-muted {
+  color: #d1d5db !important;
+  opacity: 1 !important;
+}
+
+.card .small.text-muted,
+.card .small.text-info {
+  color: #f3e8ff !important;
+  opacity: 1 !important;
+}
+
+/* Capsule subject and time */
+.card .small.text-muted.my-2 {
+  color: #e9d5ff !important;
+}
+
+/* Progress info */
+.card .small.text-info {
+  color: var(--accent) !important;
+}
+
+/* Optional: softer gray for “muted” elements like time */
+.text-muted {
+  color: #b3a5cc !important;
+}
+
+/* Navbar buttons */
+.navbar button,
+.navbar a {
+  color: #f3e8ff !important;
+  background: transparent;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: 0.3s;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+}
+.navbar button:hover,
+.navbar a:hover {
+  background: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.8);
+}
+
+
+/* === Fix Level Badge Color (BEGINNER / INTERMEDIATE etc.) === */
+.badge-level,
+.badge,
+.badge.bg-info,
+.badge.bg-primary {
+  background: linear-gradient(90deg, #a855f7, #c084fc) !important; /* purple gradient */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Optional hover effect */
+.badge-level:hover {
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.8);
+}
+
+
+/* Fix hidden dropdown text */
+select.form-select, 
+option {
+  color: #000000 !important;       /* makes text visible on dark background */
+  background-color: #ebf0f4 !important;
+}
+
+/* === Compact Centered Level Button === */
+.badge-level {
+  display: inline-flex !important;   /* makes centering easy */
+  align-items: center !important;    /* vertical center */
+  justify-content: center !important;/* horizontal center */
+  font-size: 0.6rem !important;      /* small text */
+  padding: 2px 8px !important;       /* small button */
+  height: 22px !important;           /* fixed height for perfect shape */
+  border-radius: 6px !important;     /* smooth corners */
+  text-align: center !important;     /* ensure centered text */
+  line-height: 1 !important;         /* prevent vertical misalignment */
+}
+
+
+

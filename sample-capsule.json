@@ -1,0 +1,34 @@
+{
+  "schema": "pocket-classroom/v1",
+  "id": "caps_sample_001",
+  "meta": {
+    "title": "Sample: JS Basics",
+    "subject": "Programming",
+    "level": "Beginner",
+    "description": "A tiny sample capsule"
+  },
+  "notes": [
+    "Variables: let, const, var",
+    "Functions: function fn(){ }"
+  ],
+  "flashcards": [
+    {
+      "front": "How to declare a constant?",
+      "back": "const x = 1;"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which keyword declares a block-scoped variable?",
+      "choices": [
+        "var",
+        "let",
+        "const",
+        "lambda"
+      ],
+      "correct": 1,
+      "explain": "let is block-scoped."
+    }
+  ],
+  "updatedAt": "2025-10-17T00:00:00.000Z"
+}
